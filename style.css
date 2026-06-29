@@ -23,17 +23,26 @@ body {
     overflow-x: hidden;
 }
 
+/* ФОН */
+
 .marble {
     position: fixed;
     inset: 0;
     z-index: -1;
     background:
         radial-gradient(ellipse at 12% 18%, #fff 0 10%, transparent 34%),
-        linear-gradient(118deg, transparent 19%, rgba(135, 130, 120, .12) 20%, transparent 21% 44%, rgba(178, 170, 157, .1) 45%, transparent 47%),
+        linear-gradient(
+            118deg,
+            transparent 19%,
+            rgba(135, 130, 120, .12) 20%,
+            transparent 21% 44%,
+            rgba(178, 170, 157, .1) 45%,
+            transparent 47%
+        ),
         linear-gradient(145deg, #fbfaf7, #ece9e2);
 }
 
-/* INTRO */
+/* ТЁМНЫЙ INTRO */
 
 .intro {
     position: fixed;
@@ -52,20 +61,28 @@ body {
     animation: glow 1.5s 3s ease forwards;
 }
 
-/* ПЕРО */
+/* ПЕРО: ПУТЬ + ЛЁГКОЕ ПОКАЧИВАНИЕ */
 
-.feather {
+.feather-path {
     position: absolute;
     top: 8%;
     left: 50%;
     width: 78px;
-    transform-origin: 48% 16%;
-    filter: drop-shadow(0 0 8px rgba(226, 196, 123, .28));
-    animation: fall 4.15s cubic-bezier(.42, 0, .18, 1) forwards;
+    z-index: 2;
+    animation: featherPath 4.4s cubic-bezier(.35, .02, .18, 1) forwards;
     will-change: transform, opacity;
 }
 
-/* ТОЧКА КАСАНИЯ И ВОЛНА */
+.feather {
+    width: 78px;
+    display: block;
+    transform-origin: 48% 18%;
+    filter: drop-shadow(0 0 8px rgba(226, 196, 123, .28));
+    animation: featherFloat 1.65s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* ТОЧКА И СВЕТОВАЯ ВОЛНА */
 
 .touch {
     position: absolute;
@@ -75,9 +92,9 @@ body {
     height: 6px;
     border-radius: 50%;
     background: rgba(238, 215, 151, 0);
-    z-index: 2;
+    z-index: 3;
     transform: translate(-50%, -50%);
-    animation: touch 1.25s 3.95s ease-out forwards;
+    animation: touch 1.25s 4.15s ease-out forwards;
 }
 
 .touch::after {
@@ -106,7 +123,7 @@ body {
         0 0 18px rgba(255, 220, 140, .75),
         0 0 48px rgba(223, 185, 99, .45);
 
-    animation: lightWave 1.55s 4.08s ease-out forwards;
+    animation: lightWave 1.55s 4.28s ease-out forwards;
 }
 
 /* ОСНОВНАЯ КАРТОЧКА */
@@ -132,7 +149,14 @@ body {
     display: block;
     object-fit: contain;
     margin: 0 auto 8px;
-    filter: invert(61%) sepia(48%) saturate(860%) hue-rotate(359deg) brightness(94%) contrast(88%) drop-shadow(0 5px 10px rgba(178, 138, 69, .2));
+    filter:
+        invert(61%)
+        sepia(48%)
+        saturate(860%)
+        hue-rotate(359deg)
+        brightness(94%)
+        contrast(88%)
+        drop-shadow(0 5px 10px rgba(178, 138, 69, .2));
 }
 
 .eyebrow {
@@ -157,7 +181,7 @@ h1 {
     color: var(--muted);
 }
 
-/* ССЫЛКИ */
+/* КНОПКИ */
 
 .links {
     display: grid;
@@ -186,7 +210,7 @@ h1 {
     font-size: 8px;
 }
 
-/* ПОДХОД */
+/* НИЖНИЙ ТЕКСТ */
 
 .approach {
     margin-top: auto;
@@ -208,7 +232,7 @@ h1 {
     color: #5e5952;
 }
 
-/* ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ */
+/* ПОЯВЛЕНИЕ СТРАНИЦЫ */
 
 .reveal {
     opacity: 0;
@@ -225,6 +249,7 @@ h1 {
     color: #ffffff99;
     font-size: 10px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 body.ready .intro {
@@ -280,69 +305,82 @@ body.ready .link-card::after {
     background: linear-gradient(
         110deg,
         transparent 0%,
-        rgba(255, 226, 157, .45) 45%,
-        rgba(255, 247, 220, .65) 50%,
-        rgba(255, 226, 157, .35) 55%,
+        rgba(255, 226, 157, .42) 45%,
+        rgba(255, 247, 220, .62) 50%,
+        rgba(255, 226, 157, .3) 55%,
         transparent 100%
     );
 
     transform: translateX(-120%);
     pointer-events: none;
-    animation: buttonLight 1.2s ease forwards;
+    animation: buttonLight 1.1s ease forwards;
 }
 
 body.ready .link-card:nth-child(1)::after {
-    animation-delay: 1.05s;
+    animation-delay: .95s;
 }
 
 body.ready .link-card:nth-child(2)::after {
-    animation-delay: 1.2s;
+    animation-delay: 1.1s;
 }
 
 body.ready .link-card:nth-child(3)::after {
-    animation-delay: 1.35s;
+    animation-delay: 1.25s;
 }
 
 body.ready .link-card:nth-child(4)::after {
-    animation-delay: 1.5s;
+    animation-delay: 1.4s;
 }
 
 /* АНИМАЦИИ */
 
-@keyframes fall {
+@keyframes featherPath {
     0% {
-        transform: translate3d(-50%, -78px, 0) rotate(-14deg) scale(.98);
         opacity: 0;
+        transform: translate3d(-50%, -92px, 0);
     }
 
-    9% {
+    10% {
         opacity: 1;
-        transform: translate3d(calc(-50% - 4px), -34px, 0) rotate(-9deg) scale(1);
     }
 
-    24% {
-        transform: translate3d(calc(-50% - 18px), 10svh, 0) rotate(7deg) scale(1);
+    28% {
+        transform: translate3d(calc(-50% - 18px), 12svh, 0);
     }
 
-    42% {
-        transform: translate3d(calc(-50% + 14px), 24svh, 0) rotate(-5deg) scale(.99);
+    52% {
+        transform: translate3d(calc(-50% + 14px), 31svh, 0);
     }
 
-    60% {
-        transform: translate3d(calc(-50% - 10px), 37svh, 0) rotate(4deg) scale(1);
-    }
-
-    78% {
-        transform: translate3d(calc(-50% + 7px), 49svh, 0) rotate(-3deg) scale(1);
-    }
-
-    92% {
-        transform: translate3d(calc(-50% - 3px), 55svh, 0) rotate(1deg) scale(1);
+    76% {
+        transform: translate3d(calc(-50% - 7px), 49svh, 0);
     }
 
     100% {
-        transform: translate3d(-50%, 57svh, 0) rotate(0deg) scale(1);
         opacity: 1;
+        transform: translate3d(-50%, 57svh, 0);
+    }
+}
+
+@keyframes featherFloat {
+    0% {
+        transform: translateX(0) rotate(-13deg);
+    }
+
+    25% {
+        transform: translateX(-6px) rotate(7deg);
+    }
+
+    50% {
+        transform: translateX(4px) rotate(-4deg);
+    }
+
+    75% {
+        transform: translateX(-3px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(-13deg);
     }
 }
 
@@ -417,7 +455,7 @@ body.ready .link-card:nth-child(4)::after {
     }
 }
 
-/* ЕСЛИ У ПОЛЬЗОВАТЕЛЯ ОТКЛЮЧЕНЫ АНИМАЦИИ */
+/* ЕСЛИ ОТКЛЮЧЕНЫ АНИМАЦИИ */
 
 @media (prefers-reduced-motion: reduce) {
     .intro,
@@ -430,6 +468,8 @@ body.ready .link-card:nth-child(4)::after {
         transform: none;
     }
 
+    .feather-path,
+    .feather,
     .touch,
     .touch::after,
     body.ready .link-card::after {
