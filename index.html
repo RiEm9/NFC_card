@@ -1,53 +1,41 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#151411">
-    <meta name="description" content="Марина Редька — психолог и консультант">
-    <title>Марина Редька</title>
-    <link rel="stylesheet" href="style.css?v=6">
-</head>
-<body>
-    <div class="marble" aria-hidden="true"></div>
+const CONTACTS = {
+    instagram: "",
+    whatsapp: "",
+    booking: ""
+};
 
-    <div class="intro" aria-hidden="true">
-        <img class="feather" src="feather.svg?v=4" alt="">
-        <span class="touch"></span>
-    </div>
+function finishIntro() {
+    document.body.classList.add("ready");
+}
 
-    <main class="card">
-        <header class="identity reveal">
-            <img class="phoenix" src="phoenix.svg?v=6" alt="Золотой феникс">
-            <p class="eyebrow">Психолог · консультант</p>
-            <h1>Марина Редька</h1>
-        </header>
+document.addEventListener("DOMContentLoaded", () => {
+    const reducedMotion = window.matchMedia
+        ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        : false;
 
-        <nav class="links" aria-label="Контакты">
-            <a class="link-card reveal" href="#" data-link="instagram">
-                <span>Instagram</span>
-                <small>Смотреть</small>
-            </a>
-            <a class="link-card reveal" href="#" data-link="whatsapp">
-                <span>WhatsApp</span>
-                <small>Написать</small>
-            </a>
-            <a class="link-card reveal" href="#" data-link="booking">
-                <span>Записаться</span>
-                <small>Консультация</small>
-            </a>
-            <a class="link-card reveal" href="#approach">
-                <span>Мой подход</span>
-                <small>Подробнее</small>
-            </a>
-        </nav>
+    window.setTimeout(finishIntro, reducedMotion ? 0 : 4400);
 
-        <section class="approach reveal" id="approach">
-            <p>«Любопытство —<br>начало любого изменения.»</p>
-        </section>
-    </main>
+    const skipButton = document.querySelector(".skip");
+    const intro = document.querySelector(".intro");
 
-    <button class="skip" type="button">Пропустить</button>
-    <script src="script.js?v=6"></script>
-</body>
-</html>
+    if (skipButton) {
+        skipButton.addEventListener("click", finishIntro);
+    }
+
+    if (intro) {
+        intro.addEventListener("click", finishIntro);
+    }
+
+    document.querySelectorAll("[data-link]").forEach(link => {
+        const url = CONTACTS[link.dataset.link];
+
+        if (url) {
+            link.href = url;
+            link.target = "_blank";
+            link.rel = "noreferrer";
+        } else {
+            link.addEventListener("click", event => event.preventDefault());
+            link.setAttribute("aria-disabled", "true");
+        }
+    });
+});
