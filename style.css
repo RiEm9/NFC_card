@@ -61,7 +61,7 @@ body {
     width: 78px;
     transform-origin: 50% 18%;
     filter: drop-shadow(0 0 8px rgba(226, 196, 123, .28));
-    animation: fall 3.9s cubic-bezier(.34, .02, .18, 1) forwards;
+    animation: spiralFall 4.2s ease-in-out forwards;
     will-change: transform, opacity;
 }
 
@@ -302,55 +302,42 @@ body.ready .link-card:nth-child(4)::after {
 
 /* АНИМАЦИИ */
 
-@keyframes fall {
+@keyframes spiralFall {
     0% {
-        transform: translate3d(-50%, -80px, 0) rotate(-26deg) scale(.96);
+        transform: translate3d(-50%, -90px, 0) rotate(-35deg) scale(.96);
         opacity: 0;
     }
 
-    7% {
+    8% {
         opacity: 1;
-        transform: translate3d(calc(-50% - 6px), -34px, 0) rotate(-18deg) scale(1);
     }
 
-    15% {
-        transform: translate3d(calc(-50% - 28px), 7svh, 0) rotate(16deg);
-    }
-
-    24% {
-        transform: translate3d(calc(-50% - 11px), 14svh, 0) rotate(4deg);
+    18% {
+        transform: translate3d(calc(-50% + 34px), 7svh, 0) rotate(55deg) scale(1);
     }
 
     34% {
-        transform: translate3d(calc(-50% + 24px), 21svh, 0) rotate(-17deg);
+        transform: translate3d(calc(-50% - 32px), 19svh, 0) rotate(145deg) scale(.98);
     }
 
-    45% {
-        transform: translate3d(calc(-50% + 8px), 29svh, 0) rotate(-6deg);
+    50% {
+        transform: translate3d(calc(-50% + 24px), 31svh, 0) rotate(230deg) scale(1);
     }
 
-    56% {
-        transform: translate3d(calc(-50% - 22px), 36svh, 0) rotate(14deg);
+    66% {
+        transform: translate3d(calc(-50% - 18px), 42svh, 0) rotate(315deg) scale(.99);
     }
 
-    67% {
-        transform: translate3d(calc(-50% - 4px), 43svh, 0) rotate(5deg);
+    82% {
+        transform: translate3d(calc(-50% + 10px), 51svh, 0) rotate(385deg) scale(1);
     }
 
-    78% {
-        transform: translate3d(calc(-50% + 16px), 49svh, 0) rotate(-10deg);
-    }
-
-    88% {
-        transform: translate3d(calc(-50% + 4px), 53svh, 0) rotate(-3deg);
-    }
-
-    96% {
-        transform: translate3d(calc(-50% - 3px), 56svh, 0) rotate(2deg);
+    94% {
+        transform: translate3d(calc(-50% - 4px), 56svh, 0) rotate(420deg) scale(1);
     }
 
     100% {
-        transform: translate3d(-50%, 57svh, 0) rotate(0deg);
+        transform: translate3d(-50%, 57svh, 0) rotate(430deg) scale(1);
         opacity: 1;
     }
 }
