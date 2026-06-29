@@ -150,6 +150,13 @@ h1 {
     letter-spacing: -.045em;
 }
 
+.intro-text {
+    max-width: 310px;
+    margin: 18px auto 0;
+    font: 400 16px/1.55 Arial, sans-serif;
+    color: var(--muted);
+}
+
 /* ССЫЛКИ */
 
 .links {
