@@ -1,5 +1,5 @@
 const CONTACTS = {
-    instagram: "",
+    instagram: "https://www.instagram.com/grekova.yuli/",
     whatsapp: "",
     booking: ""
 };
