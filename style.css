@@ -82,14 +82,13 @@ body {
 }
 
 .phoenix {
-    width: 140px !important;
-    height: 140px !important;
-    max-width: 140px !important;
-    max-height: 140px !important;
-    object-fit: contain;
+    width: 155px;
+    height: auto;
+    max-width: 55vw;
     display: block;
+    object-fit: contain;
     margin: 0 auto 8px;
-    filter: invert(61%) sepia(48%) saturate(860%) hue-rotate(359deg) brightness(94%) contrast(88%) drop-shadow(0 5px 10px rgba(178, 138, 69, .2))
+    filter: invert(61%) sepia(48%) saturate(860%) hue-rotate(359deg) brightness(94%) contrast(88%) drop-shadow(0 5px 10px rgba(178, 138, 69, .2));
 }
 
 .eyebrow {
