@@ -54,7 +54,7 @@ body {
     inset: 0;
     z-index: 10;
     background: var(--night);
-    transition: opacity 1.35s ease, visibility 1.35s;
+    transition: opacity 1.45s cubic-bezier(.22, .61, .36, 1), visibility 1.45s;
     overflow: hidden;
 }
 
@@ -68,21 +68,21 @@ body {
 
 .feather-path {
     position: absolute;
-    top: 7%;
+    top: 6%;
     left: 50%;
-    width: 78px;
+    width: 72px;
     z-index: 2;
-    animation: featherPath 4.68s cubic-bezier(.22, .01, .2, 1) forwards;
+    animation: featherDescent 5.6s linear forwards;
     will-change: transform, opacity;
 }
 
 .feather {
-    width: 78px;
+    width: 72px;
     display: block;
-    transform-origin: 48% 18%;
-    filter: drop-shadow(0 0 8px rgba(226, 196, 123, .28));
-    animation: featherFloat 2.35s ease-in-out infinite;
-    will-change: transform;
+    transform-origin: 48% 14%;
+    filter: drop-shadow(0 3px 10px rgba(226, 196, 123, .24));
+    animation: featherAir 5.6s linear forwards;
+    will-change: transform, opacity;
 }
 
 .touch {
@@ -95,7 +95,7 @@ body {
     background: rgba(238, 215, 151, 0);
     z-index: 3;
     transform: translate(-50%, -50%);
-    animation: touch 1.25s 4.56s ease-out forwards;
+    animation: touch 1.25s 5.44s ease-out forwards;
 }
 
 .touch::after {
@@ -110,7 +110,7 @@ body {
     opacity: 0;
     background: radial-gradient(circle, rgba(255, 232, 165, .95) 0%, rgba(223, 185, 99, .48) 18%, rgba(223, 185, 99, .2) 38%, rgba(223, 185, 99, .06) 62%, transparent 74%);
     box-shadow: 0 0 18px rgba(255, 220, 140, .75), 0 0 48px rgba(223, 185, 99, .45);
-    animation: lightWave 1.55s 4.68s ease-out forwards;
+    animation: lightWave 1.55s 5.58s ease-out forwards;
 }
 
 .card {
@@ -324,57 +324,98 @@ body.ready .link-card:nth-child(4)::after {
     animation-delay: .67s;
 }
 
-@keyframes featherPath {
+@keyframes featherDescent {
     0% {
         opacity: 0;
-        transform: translate3d(calc(-50% + 30px), -110px, 0) rotate(3deg);
+        transform: translate3d(calc(-50% + 38px), -112px, 0);
+        animation-timing-function: cubic-bezier(.3, .02, .28, 1);
     }
 
     9% {
         opacity: 1;
     }
 
-    24% {
-        transform: translate3d(calc(-50% - 24px), 11svh, 0) rotate(-5deg);
+    18% {
+        transform: translate3d(calc(-50% - 30px), 8svh, 0);
+        animation-timing-function: cubic-bezier(.42, 0, .22, 1);
     }
 
-    48% {
-        transform: translate3d(calc(-50% + 18px), 29svh, 0) rotate(4deg);
+    35% {
+        transform: translate3d(calc(-50% + 22px), 22svh, 0);
+        animation-timing-function: cubic-bezier(.42, 0, .22, 1);
     }
 
-    70% {
-        transform: translate3d(calc(-50% - 10px), 46svh, 0) rotate(-2deg);
+    52% {
+        transform: translate3d(calc(-50% - 15px), 37svh, 0);
+        animation-timing-function: cubic-bezier(.42, 0, .2, 1);
     }
 
-    88% {
-        transform: translate3d(calc(-50% + 4px), 55svh, 0) rotate(1deg);
+    68% {
+        transform: translate3d(calc(-50% + 9px), 49svh, 0);
+        animation-timing-function: cubic-bezier(.38, 0, .18, 1);
+    }
+
+    81% {
+        transform: translate3d(calc(-50% - 4px), 56svh, 0);
+        animation-timing-function: cubic-bezier(.32, 0, .18, 1);
+    }
+
+    91% {
+        transform: translate3d(calc(-50% + 1.5px), 59svh, 0);
+        animation-timing-function: cubic-bezier(.2, .55, .24, 1);
     }
 
     100% {
         opacity: 1;
-        transform: translate3d(-50%, 58svh, 0) rotate(0deg);
+        transform: translate3d(-50%, 60svh, 0);
     }
 }
 
-@keyframes featherFloat {
+@keyframes featherAir {
     0% {
-        transform: translateX(0) translateY(0) rotate(-16deg);
+        opacity: 0;
+        transform: rotate(-11deg) scale(.96);
+        animation-timing-function: ease-out;
     }
 
-    20% {
-        transform: translateX(-8px) translateY(2px) rotate(9deg);
+    9% {
+        opacity: 1;
+        transform: rotate(-9deg) scale(.98);
     }
 
-    45% {
-        transform: translateX(5px) translateY(-3px) rotate(-6deg);
+    22% {
+        transform: rotate(6deg) scale(1);
+        animation-timing-function: ease-in-out;
     }
 
-    68% {
-        transform: translateX(-4px) translateY(1px) rotate(5deg);
+    39% {
+        transform: rotate(-4.5deg) scale(1);
+        animation-timing-function: ease-in-out;
+    }
+
+    56% {
+        transform: rotate(3deg) scale(1);
+        animation-timing-function: ease-in-out;
+    }
+
+    72% {
+        transform: rotate(-1.8deg) scale(1);
+        animation-timing-function: ease-in-out;
+    }
+
+    85% {
+        transform: rotate(.8deg) scale(1);
+        animation-timing-function: ease-in-out;
+    }
+
+    94% {
+        transform: rotate(-.25deg) scale(1);
+        animation-timing-function: ease-out;
     }
 
     100% {
-        transform: translateX(0) translateY(0) rotate(-16deg);
+        opacity: .96;
+        transform: rotate(0deg) scale(.99);
     }
 }
 
