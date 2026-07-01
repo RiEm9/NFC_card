@@ -85,6 +85,11 @@ body {
     will-change: transform, opacity;
 }
 
+body.motion-js .feather-path,
+body.motion-js .feather {
+    animation: none;
+}
+
 .touch {
     position: absolute;
     left: 50%;
