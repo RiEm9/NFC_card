@@ -22,8 +22,8 @@ const TRANSLATIONS = {
         description: "Юлия Грекова — психолог и консультант"
     },
     de: {
-        name: "Julia Grekova",
-        eyebrow: "Psychologin · Beraterin",
+        name: "Yuliia Hrekova",
+        eyebrow: "Lebensberaterin",
         intro: "Ein geschützter Raum für achtsame Gespräche, Selbsterkenntnis und innere Stabilität.",
         view: "Ansehen",
         write: "Schreiben",
@@ -35,7 +35,7 @@ const TRANSLATIONS = {
         skip: "Überspringen",
         contacts: "Kontakte",
         phoenixAlt: "Goldener Phönix",
-        description: "Julia Grekova — Psychologin und Beraterin"
+        description: "Yuliia Hrekova — Lebensberaterin"
     }
 };
 
