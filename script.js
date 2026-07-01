@@ -42,7 +42,7 @@ const TRANSLATIONS = {
 const finishIntro = () => document.body.classList.add("ready");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-setTimeout(finishIntro, reducedMotion ? 0 : 5230);
+setTimeout(finishIntro, reducedMotion ? 0 : 4180);
 
 document.querySelector(".skip").addEventListener("click", finishIntro);
 document.querySelector(".intro").addEventListener("click", finishIntro);
