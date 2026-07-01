@@ -7,11 +7,17 @@
     <meta name="description" content="Юлия Грекова — психолог и консультант">
     <title>Юлия Грекова</title>
 
-    <link rel="stylesheet" href="style.css?v=35">
+    <link rel="stylesheet" href="style.css?v=36">
 </head>
 
 <body>
     <div class="marble" aria-hidden="true"></div>
+
+    <div class="language-switch" role="group" aria-label="Язык">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
 
     <div class="intro" aria-hidden="true">
         <div class="feather-path">
@@ -23,46 +29,46 @@
 
     <main class="card">
         <header class="identity reveal">
-            <img class="phoenix" src="phoenix.svg?v=30" alt="Золотой феникс">
+            <img class="phoenix" src="phoenix.svg?v=30" alt="Золотой феникс" data-i18n-alt="phoenixAlt">
 
-            <p class="eyebrow">Психолог · консультант</p>
+            <p class="eyebrow" data-i18n="eyebrow">Психолог · консультант</p>
 
-            <h1>Юлия Грекова</h1>
+            <h1 data-i18n="name">Юлия Грекова</h1>
 
-            <p class="intro-text">
+            <p class="intro-text" data-i18n="intro">
                 Пространство для бережного разговора, самопонимания и внутренней опоры.
             </p>
         </header>
 
-        <nav class="links" aria-label="Контакты">
+        <nav class="links" aria-label="Контакты" data-i18n-aria="contacts">
             <a class="link-card reveal" href="https://www.instagram.com/grekova.yuli/" target="_blank" rel="noreferrer">
                 <span>Instagram</span>
-                <small>Смотреть</small>
+                <small data-i18n="view">Смотреть</small>
             </a>
 
             <a class="link-card reveal" href="https://wa.me/ТВОЙ_НОМЕР" target="_blank" rel="noreferrer">
                 <span>WhatsApp</span>
-                <small>Написать</small>
+                <small data-i18n="write">Написать</small>
             </a>
 
             <a class="link-card reveal" href="#" target="_blank" rel="noreferrer">
-                <span>Записаться</span>
-                <small>Консультация</small>
+                <span data-i18n="booking">Записаться</span>
+                <small data-i18n="consultation">Консультация</small>
             </a>
 
             <a class="link-card reveal" href="#approach">
-                <span>Мой подход</span>
-                <small>Подробнее</small>
+                <span data-i18n="approach">Мой подход</span>
+                <small data-i18n="more">Подробнее</small>
             </a>
         </nav>
 
         <section class="approach reveal" id="approach">
-            <p>«Любопытство —<br>начало любого изменения.»</p>
+            <p data-i18n-html="quote">«Любопытство —<br>начало любого изменения.»</p>
         </section>
     </main>
 
-    <button class="skip" type="button">Пропустить</button>
+    <button class="skip" type="button" data-i18n="skip">Пропустить</button>
 
-    <script src="script.js?v=33"></script>
+    <script src="script.js?v=36"></script>
 </body>
 </html>
