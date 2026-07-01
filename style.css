@@ -367,42 +367,50 @@ body.ready .link-card:nth-child(4)::after {
 @keyframes featherDescent {
     0% {
         opacity: 0;
-        transform: translate3d(calc(-50% + 38px), -112px, 0);
-        animation-timing-function: cubic-bezier(.3, .02, .28, 1);
+        transform: translate3d(calc(-50% + 68px), -118px, 0);
+        animation-timing-function: cubic-bezier(.28, .02, .2, 1);
     }
 
-    9% {
+    7% {
+        opacity: .92;
+        transform: translate3d(calc(-50% + 58px), -76px, 0);
+        animation-timing-function: cubic-bezier(.36, .04, .2, 1);
+    }
+
+    20% {
         opacity: 1;
+        transform: translate3d(calc(-50% + 15px), 4svh, 0);
+        animation-timing-function: cubic-bezier(.42, .03, .2, 1);
     }
 
-    18% {
-        transform: translate3d(calc(-50% - 30px), 8svh, 0);
-        animation-timing-function: cubic-bezier(.42, 0, .22, 1);
+    37% {
+        transform: translate3d(calc(-50% - 33px), 22svh, 0);
+        animation-timing-function: cubic-bezier(.36, .02, .18, 1);
     }
 
-    35% {
-        transform: translate3d(calc(-50% + 22px), 22svh, 0);
-        animation-timing-function: cubic-bezier(.42, 0, .22, 1);
-    }
-
-    52% {
-        transform: translate3d(calc(-50% - 15px), 37svh, 0);
-        animation-timing-function: cubic-bezier(.42, 0, .2, 1);
+    53% {
+        transform: translate3d(calc(-50% - 12px), 38svh, 0);
+        animation-timing-function: cubic-bezier(.4, .04, .18, 1);
     }
 
     68% {
-        transform: translate3d(calc(-50% + 9px), 49svh, 0);
-        animation-timing-function: cubic-bezier(.38, 0, .18, 1);
+        transform: translate3d(calc(-50% + 22px), 49svh, 0);
+        animation-timing-function: cubic-bezier(.38, .02, .17, 1);
     }
 
     81% {
-        transform: translate3d(calc(-50% - 4px), 56svh, 0);
-        animation-timing-function: cubic-bezier(.32, 0, .18, 1);
+        transform: translate3d(calc(-50% + 9px), 56svh, 0);
+        animation-timing-function: cubic-bezier(.32, .08, .17, 1);
     }
 
     91% {
-        transform: translate3d(calc(-50% + 1.5px), 59svh, 0);
-        animation-timing-function: cubic-bezier(.2, .55, .24, 1);
+        transform: translate3d(calc(-50% - 4px), 59svh, 0);
+        animation-timing-function: cubic-bezier(.24, .28, .2, 1);
+    }
+
+    97% {
+        transform: translate3d(calc(-50% + 1px), 59.8svh, 0);
+        animation-timing-function: cubic-bezier(.18, .5, .2, 1);
     }
 
     100% {
@@ -414,48 +422,53 @@ body.ready .link-card:nth-child(4)::after {
 @keyframes featherAir {
     0% {
         opacity: 0;
-        transform: translate(-1.5%, -98%) rotate(-5deg) scale(.94);
-        animation-timing-function: ease-out;
+        transform: translate(-1.5%, -98%) rotate(-7deg) scale(.94);
+        animation-timing-function: cubic-bezier(.25, 0, .22, 1);
     }
 
-    9% {
+    8% {
         opacity: 1;
-        transform: translate(-1.5%, -98%) rotate(-3deg) scale(.97);
+        transform: translate(-1.5%, -98%) rotate(-5.5deg) scale(.975);
+        animation-timing-function: cubic-bezier(.42, 0, .22, 1);
     }
 
-    22% {
-        transform: translate(-1.5%, -98%) rotate(3.5deg) scale(1);
-        animation-timing-function: ease-in-out;
+    24% {
+        transform: translate(-1.5%, -98%) rotate(2.4deg) scale(1);
+        animation-timing-function: cubic-bezier(.42, 0, .2, 1);
     }
 
-    39% {
-        transform: translate(-1.5%, -98%) rotate(-2.6deg) scale(1);
-        animation-timing-function: ease-in-out;
+    40% {
+        transform: translate(-1.5%, -98%) rotate(4.6deg) scale(1.005);
+        animation-timing-function: cubic-bezier(.36, 0, .2, 1);
     }
 
-    56% {
-        transform: translate(-1.5%, -98%) rotate(1.8deg) scale(1);
-        animation-timing-function: ease-in-out;
+    57% {
+        transform: translate(-1.5%, -98%) rotate(-2.8deg) scale(1);
+        animation-timing-function: cubic-bezier(.4, 0, .2, 1);
     }
 
     72% {
-        transform: translate(-1.5%, -98%) rotate(-1.1deg) scale(1);
-        animation-timing-function: ease-in-out;
+        transform: translate(-1.5%, -98%) rotate(1.5deg) scale(1);
+        animation-timing-function: cubic-bezier(.34, .04, .18, 1);
     }
 
-    85% {
-        transform: translate(-1.5%, -98%) rotate(.55deg) scale(1);
-        animation-timing-function: ease-in-out;
+    84% {
+        transform: translate(-1.5%, -98%) rotate(.6deg) scale(1);
+        animation-timing-function: cubic-bezier(.28, .14, .18, 1);
     }
 
-    94% {
-        transform: translate(-1.5%, -98%) rotate(-.2deg) scale(1);
-        animation-timing-function: ease-out;
+    93% {
+        transform: translate(-1.5%, -98%) rotate(-.45deg) scale(.997);
+        animation-timing-function: cubic-bezier(.2, .4, .2, 1);
+    }
+
+    98% {
+        transform: translate(-1.5%, -98%) rotate(.1deg) scale(.994);
     }
 
     100% {
         opacity: .98;
-        transform: translate(-1.5%, -98%) rotate(0deg) scale(.99);
+        transform: translate(-1.5%, -98%) rotate(0deg) scale(.992);
     }
 }
 
