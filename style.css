@@ -72,7 +72,7 @@ body {
     left: 50%;
     width: 1px;
     z-index: 2;
-    animation: featherDescent 5.25s linear forwards;
+    animation: featherDescent 4.2s linear forwards;
     will-change: transform, opacity;
 }
 
@@ -81,7 +81,7 @@ body {
     display: block;
     transform-origin: 2% 98%;
     filter: drop-shadow(0 3px 10px rgba(226, 196, 123, .24));
-    animation: featherAir 5.25s linear forwards;
+    animation: featherAir 4.2s linear forwards;
     will-change: transform, opacity;
 }
 
@@ -95,7 +95,7 @@ body {
     background: rgba(238, 215, 151, 0);
     z-index: 3;
     transform: translate(-50%, -50%);
-    animation: touch 1.25s 5.09s ease-out forwards;
+    animation: touch 1.25s 4.04s ease-out forwards;
 }
 
 .touch::after {
@@ -110,7 +110,7 @@ body {
     opacity: 0;
     background: radial-gradient(circle, rgba(255, 232, 165, .95) 0%, rgba(223, 185, 99, .48) 18%, rgba(223, 185, 99, .2) 38%, rgba(223, 185, 99, .06) 62%, transparent 74%);
     box-shadow: 0 0 18px rgba(255, 220, 140, .75), 0 0 48px rgba(223, 185, 99, .45);
-    animation: lightWave 1.55s 5.23s ease-out forwards;
+    animation: lightWave 1.55s 4.18s ease-out forwards;
 }
 
 
@@ -170,12 +170,7 @@ body.ready .language-switch button[aria-pressed="true"] {
 }
 
 .card::before {
-    content: "";
-    display: block;
-    width: 1px;
-    height: clamp(26px, 8svh, 58px);
-    margin: 0 auto 18px;
-    background: linear-gradient(transparent, rgba(185, 140, 63, .68), transparent);
+    display: none;
 }
 
 .identity {
