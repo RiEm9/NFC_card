@@ -7,7 +7,7 @@ const CONTACTS = {
 const TRANSLATIONS = {
     ru: {
         name: "Юлия Грекова",
-        eyebrow: "Психолог · консультант",
+        eyebrow: "Lebensberaterin",
         intro: "Пространство для бережного разговора, самопонимания и внутренней опоры.",
         view: "Смотреть",
         write: "Написать",
